@@ -1,7 +1,7 @@
-
-
-export default function page() {
+export default function HomePage() {
   return (
-    <div>page</div>
-  )
+    <main>
+      <h1>DevHub</h1>
+    </main>
+  );
 }
