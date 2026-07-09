@@ -1,8 +1,13 @@
 import { getResources } from '@/app/services/resources'
-import React from 'react'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+// import React from 'react'
 
 export default async function Resources() {
   const resources = await getResources()
+  // if(!resources){
+  //   notFound()
+  // }
 
   return (
 <main className="p-8">
@@ -10,16 +15,17 @@ export default async function Resources() {
 
       <div className="space-y-4">
         {resources.slice(0, 10).map((resource) => (
-          <div
-            key={resource.id}
-            className="border rounded-lg p-4"
-          >
-            <h2 className="text-xl font-semibold">
-              {resource.title}
-            </h2>
+          <Link
+  href={`/resources/${resource.id}`}
+  key={resource.id}
+  className="block border rounded-lg p-4"
+>
+  <h2 className="text-xl font-semibold">
+    {resource.title}
+  </h2>
 
-            <p>{resource.body}</p>
-          </div>
+  <p>{resource.body}</p>
+</Link>
         ))}
       </div>
     </main>
