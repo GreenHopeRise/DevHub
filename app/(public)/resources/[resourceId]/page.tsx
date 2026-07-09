@@ -1,5 +1,5 @@
 import { getResource } from "@/app/services/resources";
-import { getUsers } from "@/app/services/users";
+import { getUser} from "@/app/services/users";
 import { notFound } from "next/navigation";
 
 
@@ -17,7 +17,10 @@ export default async function ResourceDetailsPage({ params }: Props) {
   if (!resource) {
     notFound()
   }
-  const user = await getUsers(resource.userId)
+  const user = await getUser(resource.userId)
+  if (!resource) {
+    notFound()
+  }
 
   return (
     <main className="p-8">
