@@ -1,11 +1,9 @@
 
-import { Resource } from "../types/resource";
+// import { Resource } from "../types/resource";
 
-export async function getResources():Promise<Resource[] | null> {
+export async function getResources():Promise<Resource[] > {
     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    if (res.status ===404) {
-        return null
-    }
+
     if(!res.ok){
         throw new Error('somthing went wrong')
     }

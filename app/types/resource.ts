@@ -1,4 +1,4 @@
-export interface Resource {
+type Resource = {
     id: number;
   title: string;
   body: string;
