@@ -2,7 +2,7 @@
 // import { Resource } from "../types/resource";
 
 export async function getResources():Promise<Resource[] > {
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts', {cache:'force-cache'})
 
     if(!res.ok){
         throw new Error('somthing went wrong')
@@ -13,7 +13,7 @@ export async function getResources():Promise<Resource[] > {
 
 export async function getResource(id: string): Promise<Resource | null> {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`
+    `https://jsonplaceholder.typicode.com/posts/${id}`, {cache:'force-cache'}
   );
 
   if (res.status === 404) {
