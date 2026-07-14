@@ -23,6 +23,7 @@ export default async function Resources() {
   <h2 className="text-xl font-semibold">
     {resource.title}
   </h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime magnam nulla quas harum dicta ab possimus impedit inventore? Dolores ullam officia accusantium voluptatem dolorem, quod assumenda velit. Aut, quae rem?</p>
 
   <p>{resource.body}</p>
 </Link>
